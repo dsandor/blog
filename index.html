@@ -91,11 +91,16 @@
 <h3 id="Install_prerequisites"><a href="#Install_prerequisites" class="headerlink" title="Install prerequisites."></a>Install prerequisites.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum <span class="operator"><span class="keyword">install</span> gcc-<span class="keyword">c</span>++ make openssl-devel git</span></span><br></pre></td></tr></table></figure>
 <h3 id="Install_NodeJS_from_Binaries"><a href="#Install_NodeJS_from_Binaries" class="headerlink" title="Install NodeJS from Binaries"></a>Install NodeJS from Binaries</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">wget http://nodejs.org/dist/v4.<span class="number">2.3</span>/<span class="keyword">node</span><span class="identifier"></span><span class="title">-v4</span>.<span class="number">2.3</span>-linux-x64.tar.gz</span><br><span class="line">sudo tar --strip-components <span class="number">1</span> -xzvf <span class="keyword">node</span><span class="identifier"></span><span class="title">-v</span>* -C /usr/local</span><br></pre></td></tr></table></figure>
 <h3 id="Update_NPM_to_Latest"><a href="#Update_NPM_to_Latest" class="headerlink" title="Update NPM to Latest"></a>Update NPM to Latest</h3><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> i <span class="built_in">npm</span><span class="property">@latest</span> -g</span><br></pre></td></tr></table></figure>
+<h3 id="Format_presented_volume_to_ec2_instance"><a href="#Format_presented_volume_to_ec2_instance" class="headerlink" title="Format presented volume to ec2 instance."></a>Format presented volume to ec2 instance.</h3><p>From the docs [<a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-add-volume-to-instance.html" target="_blank" rel="external">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-add-volume-to-instance.html</a>]</p>
+<p>Use <code>lsblk</code> to determine the volume that was presented.</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br><span class="line">sudo mkfs -t ext4 <span class="regexp">/dev/</span>xvdb</span><br></pre></td></tr></table></figure>
+<p>Mount the device.</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> mkdir /mnt/<span class="typedef"><span class="keyword">data</span></span></span><br><span class="line"><span class="title">sudo</span> mount /dev/xvdb /mnt/<span class="typedef"><span class="keyword">data</span></span></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/19/Setting up AWS for NodeJS and NGiNX/" data-id="ciid8m1xi00001mitw45a7qua" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/19/Setting up AWS for NodeJS and NGiNX/" data-id="ciid9148e000029itsuatt6v0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AWS/">AWS</a></li></ul>
@@ -142,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/11/Solved-Bluetooth-not-available-Mac-OSX-el-Capitan/" data-id="ciid8m1xq00031mit1kaxiyvp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/11/Solved-Bluetooth-not-available-Mac-OSX-el-Capitan/" data-id="ciid9148l000329itwjmbop3o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OSX/">OSX</a></li></ul>
