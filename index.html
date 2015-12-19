@@ -110,11 +110,15 @@
 <p>Now, login to your AWS EC2 server instance and edit the <code>authorized_keys</code> file you created earlier.<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano ~<span class="regexp">/.ssh/authorized</span>_keys</span><br></pre></td></tr></table></figure></p>
 <p><strong>Paste the ssh-rsa string into this file and save it.</strong></p>
 <p>You can now login to EC2 from your workstation.</p>
+<h3 id="Install_NGiNX"><a href="#Install_NGiNX" class="headerlink" title="Install NGiNX"></a>Install NGiNX</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> nginx</span><br></pre></td></tr></table></figure>
+<p>Enable the NGiNX service.<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chkconfig nginx <span class="function_start"><span class="keyword">on</span></span></span><br></pre></td></tr></table></figure></p>
+<p>Start the service.<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service nginx <span class="literal">start</span></span><br></pre></td></tr></table></figure></p>
+<p>Configure the service:<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano <span class="regexp">/etc/</span>nginx<span class="regexp">/conf.d/</span><span class="keyword">default</span>.conf</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/19/Setting up AWS for NodeJS and NGiNX/" data-id="ciidfxj02000073itrrccqdp8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/19/Setting up AWS for NodeJS and NGiNX/" data-id="ciidg6y4b00007uit92zva2ld" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AWS-Linux/">AWS  Linux</a></li></ul>
@@ -161,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/11/Solved-Bluetooth-not-available-Mac-OSX-el-Capitan/" data-id="ciidfxj09000373ituiwf4xku" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/11/Solved-Bluetooth-not-available-Mac-OSX-el-Capitan/" data-id="ciidg6y4i00037uitm5xzxy8n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OSX/">OSX</a></li></ul>
