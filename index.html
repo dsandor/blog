@@ -96,11 +96,25 @@
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br><span class="line">sudo mkfs -t ext4 <span class="regexp">/dev/</span>xvdb</span><br></pre></td></tr></table></figure>
 <p>Mount the device.</p>
 <figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> mkdir /mnt/<span class="typedef"><span class="keyword">data</span></span></span><br><span class="line"><span class="title">sudo</span> mount /dev/xvdb /mnt/<span class="typedef"><span class="keyword">data</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="Create_a_new_user_on_AWS_EC2_Linux_image"><a href="#Create_a_new_user_on_AWS_EC2_Linux_image" class="headerlink" title="Create a new user on AWS EC2 Linux image."></a>Create a new user on AWS EC2 Linux image.</h3><p><a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html" target="_blank" rel="external">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html</a></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo adduser myusername</span><br><span class="line">sudo passwd myusername</span><br><span class="line">sudo su -<span class="tag">i</span> myusername</span><br><span class="line">cd ~</span><br><span class="line">mkdir <span class="class">.ssh</span></span><br><span class="line">chmod <span class="number">700</span> <span class="class">.ssh</span></span><br><span class="line">touch .ssh/authorized_keys</span><br><span class="line">chmod <span class="number">600</span> .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<p>Create a new keypair in the AWS console.<br><a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair" target="_blank" rel="external">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair</a></p>
+<p>*The private key will download.  Place this in a safe place.  Also need to install to your local user’s .ssh path.</p>
+<p><em>* Copy the </em>.pem* file to your ~/.ssh folder and set permissions <code>chmod 400 my-private-key.pem</code></p>
+<p>After copying and securing the <code>.pem</code> file you need to add the private key to the ssh keystore.<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-<span class="built_in">add</span> ~/.ssh/my-<span class="keyword">private</span>-<span class="variable">key</span>.pem</span><br></pre></td></tr></table></figure></p>
+<p>Next, export the public key so you can install that on the server. (Perform this command on your workstation)<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -<span class="literal">y</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>You will be asked for the path to your private key.</li>
+</ul>
+<p>The public key will dump to the screen, copy this entire string: (This is done on your workstation)<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh<span class="attribute">-rsa</span> AAAAB3N<span class="attribute">...</span><span class="attribute">...</span><span class="attribute">...</span><span class="built_in">.</span>m/</span><br></pre></td></tr></table></figure></p>
+<p>Now, login to your AWS EC2 server instance and edit the <code>authorized_keys</code> file you created earlier.<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano ~<span class="regexp">/.ssh/authorized</span>_keys</span><br></pre></td></tr></table></figure></p>
+<p><strong>Paste the ssh-rsa string into this file and save it.</strong></p>
+<p>You can now login to EC2 from your workstation.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/19/Setting up AWS for NodeJS and NGiNX/" data-id="ciid93lpd00002xiteb6o9xfh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/19/Setting up AWS for NodeJS and NGiNX/" data-id="ciidfxj02000073itrrccqdp8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AWS-Linux/">AWS  Linux</a></li></ul>
@@ -147,7 +161,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/11/Solved-Bluetooth-not-available-Mac-OSX-el-Capitan/" data-id="ciid93lpl00032xit24tnp5kv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/11/Solved-Bluetooth-not-available-Mac-OSX-el-Capitan/" data-id="ciidfxj09000373ituiwf4xku" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OSX/">OSX</a></li></ul>
