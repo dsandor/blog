@@ -5,19 +5,19 @@
   
   <title>Setting up AWS for NodeJS and NGiNX | David Sandor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ec2-user&quot;&amp;gt;Configure SSH, login as ec2-userInstall prerequisites.sudo yum install gcc-c++ make openssl-devel git
-Install NodeJS from Binaries123cd ~wget http://nodejs.org/dist/v4.2.3/node-v4.2.3-linux-">
+  <meta name="description" content="ec2-user&quot;&amp;gt;Configure SSH, login as ec2-user1234cp your-ec2-private-key.pem ~/.sshchmod 400 ~/.ssh/your-ec2-private-key.pemssh-add ~/.ssh/your-ec2-private-key.pemssh ec2-user@your-ec2-instance-ip
+Instal">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Setting up AWS for NodeJS and NGiNX">
 <meta property="og:url" content="http://yoursite.com/2015/12/19/Setting up AWS for NodeJS and NGiNX/index.html">
 <meta property="og:site_name" content="David Sandor">
-<meta property="og:description" content="ec2-user&quot;&amp;gt;Configure SSH, login as ec2-userInstall prerequisites.sudo yum install gcc-c++ make openssl-devel git
-Install NodeJS from Binaries123cd ~wget http://nodejs.org/dist/v4.2.3/node-v4.2.3-linux-">
-<meta property="og:updated_time" content="2015-12-19T14:42:26.000Z">
+<meta property="og:description" content="ec2-user&quot;&amp;gt;Configure SSH, login as ec2-user1234cp your-ec2-private-key.pem ~/.sshchmod 400 ~/.ssh/your-ec2-private-key.pemssh-add ~/.ssh/your-ec2-private-key.pemssh ec2-user@your-ec2-instance-ip
+Instal">
+<meta property="og:updated_time" content="2015-12-19T14:59:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Setting up AWS for NodeJS and NGiNX">
-<meta name="twitter:description" content="ec2-user&quot;&amp;gt;Configure SSH, login as ec2-userInstall prerequisites.sudo yum install gcc-c++ make openssl-devel git
-Install NodeJS from Binaries123cd ~wget http://nodejs.org/dist/v4.2.3/node-v4.2.3-linux-">
+<meta name="twitter:description" content="ec2-user&quot;&amp;gt;Configure SSH, login as ec2-user1234cp your-ec2-private-key.pem ~/.sshchmod 400 ~/.ssh/your-ec2-private-key.pemssh-add ~/.ssh/your-ec2-private-key.pemssh ec2-user@your-ec2-instance-ip
+Instal">
   
     <link rel="alternative" href="/atom.xml" title="David Sandor" type="application/atom+xml">
   
@@ -89,14 +89,15 @@ Install NodeJS from Binaries123cd ~wget http://nodejs.org/dist/v4.2.3/node-v4.2.
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Configure_SSH_2C_login_as_ec2-user"><a href="#Configure_SSH_2C_login_as_ec2-user" class="headerlink" title="Configure SSH, login as <code>ec2-user</code>"></a>Configure SSH, login as <code>ec2-user</code></h2><h3 id="Install_prerequisites"><a href="#Install_prerequisites" class="headerlink" title="Install prerequisites."></a>Install prerequisites.</h3><p>sudo yum install gcc-c++ make openssl-devel git</p>
+        <h3 id="Configure_SSH_2C_login_as_ec2-user"><a href="#Configure_SSH_2C_login_as_ec2-user" class="headerlink" title="Configure SSH, login as <code>ec2-user</code>"></a>Configure SSH, login as <code>ec2-user</code></h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cp your-ec2-private-key<span class="class">.pem</span> ~/<span class="class">.ssh</span></span><br><span class="line">chmod <span class="number">400</span> ~/.ssh/your-ec2-private-key<span class="class">.pem</span></span><br><span class="line">ssh-add ~/.ssh/your-ec2-private-key<span class="class">.pem</span></span><br><span class="line">ssh ec2-user@your-ec2-instance-ip</span><br></pre></td></tr></table></figure>
+<h3 id="Install_prerequisites"><a href="#Install_prerequisites" class="headerlink" title="Install prerequisites."></a>Install prerequisites.</h3><p>sudo yum install gcc-c++ make openssl-devel git</p>
 <h3 id="Install_NodeJS_from_Binaries"><a href="#Install_NodeJS_from_Binaries" class="headerlink" title="Install NodeJS from Binaries"></a>Install NodeJS from Binaries</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">wget http://nodejs.org/dist/v4.<span class="number">2.3</span>/<span class="keyword">node</span><span class="identifier"></span><span class="title">-v4</span>.<span class="number">2.3</span>-linux-x64.tar.gz</span><br><span class="line">sudo tar --strip-components <span class="number">1</span> -xzvf <span class="keyword">node</span><span class="identifier"></span><span class="title">-v</span>* -C /usr/local</span><br></pre></td></tr></table></figure>
 <h3 id="Update_NPM_to_Latest"><a href="#Update_NPM_to_Latest" class="headerlink" title="Update NPM to Latest"></a>Update NPM to Latest</h3><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> i <span class="built_in">npm</span><span class="property">@latest</span> -g</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/19/Setting up AWS for NodeJS and NGiNX/" data-id="ciid7rsl00000z5its2cj0f4a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/19/Setting up AWS for NodeJS and NGiNX/" data-id="ciid8d9a6000009it20svvu2k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AWS-Linux-NodeJS-DevOps/">AWS,Linux,NodeJS,DevOps</a></li></ul>
