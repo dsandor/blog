@@ -114,11 +114,12 @@
 <p>Enable the NGiNX service.<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chkconfig nginx <span class="function_start"><span class="keyword">on</span></span></span><br></pre></td></tr></table></figure></p>
 <p>Start the service.<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service nginx <span class="literal">start</span></span><br></pre></td></tr></table></figure></p>
 <p>Configure the service:<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano <span class="regexp">/etc/</span>nginx<span class="regexp">/conf.d/</span><span class="keyword">default</span>.conf</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen <span class="number">80</span>;</span><br><span class="line">    listen <span class="number">443</span> ssl;</span><br><span class="line">    server_name example.com www.example.com;</span><br><span class="line"></span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate         /etc/nginx/ssl/example.com/server.crt;</span><br><span class="line">    ssl_certificate_key     /etc/nginx/ssl/example.com/server.key;</span><br><span class="line">    ssl_trusted_certificate /etc/nginx/ssl/example.com/ca-certs.pem;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://localhost:<span class="number">8080</span>;</span><br><span class="line">        proxy_set_header Host <span class="variable">$host</span>;</span><br><span class="line">        proxy_set_header X-Real-IP <span class="variable">$remote</span>_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-For <span class="variable">$proxy</span>_add_x_forwarded_for;</span><br><span class="line">        proxy_set_header X-Forwarded-Proto <span class="variable">$scheme</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (<span class="variable">$scheme</span> = http) &#123;</span><br><span class="line">        return <span class="number">301</span> https://<span class="variable">$server</span>_name<span class="variable">$request</span>_uri;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/19/Setting up AWS for NodeJS and NGiNX/" data-id="ciidg6y4b00007uit92zva2ld" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/19/Setting up AWS for NodeJS and NGiNX/" data-id="ciidgkg2900008rit3h2q2t42" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AWS-Linux/">AWS  Linux</a></li></ul>
@@ -165,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/11/Solved-Bluetooth-not-available-Mac-OSX-el-Capitan/" data-id="ciidg6y4i00037uitm5xzxy8n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/11/Solved-Bluetooth-not-available-Mac-OSX-el-Capitan/" data-id="ciidgkg2g00038ritbo19iwci" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OSX/">OSX</a></li></ul>
